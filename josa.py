@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from hangulize import hangulize, hangul
+from hangulize import hangulize
 
 
 INDO_EUROPEANS = [('ita', 0.5), ('deu', 0.1), ('spa', 1), ('por', 0.3)]
@@ -14,7 +14,7 @@ def has_jongseong(word, lang='eng'):
         return has_jongseong_for_eng(word)
     elif lang != 'kor':
         word = hangulize(word, lang)
-    return bool(hangul.split(word[-1])[2])
+    return (ord(word[-1]) - 16) % 28 != 0
 
 
 def has_jongseong_for_eng(word):
@@ -32,10 +32,6 @@ def add_josa(after_jongseong, after_jungseong):
 
 
 def josa(word, type, lang='eng'):
-    if not isinstance(word, unicode):
-        word = word.encode()
-    if not isinstance(type, unicode):
-        type = type.encode()
     for pp in POSTPOSITIONS:
         if type in pp:
             return pp[0] if has_jongseong(word, lang) else pp[1]

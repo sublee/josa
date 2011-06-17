@@ -15,6 +15,13 @@ deterministic이랑
 >>> print josa.append(u'あなた', u'이', lang='jpn')
 あなた가
 
+Links
+`````
+
+* `GitHub repository <http://github.com/sublee/josa>`_
+* `development version
+  <http://github.com/sublee/josa/zipball/master#egg=josa-dev>`_
+
 """
 try:
     from setuptools import setup
@@ -29,7 +36,7 @@ def run_tests():
 
 setup(
     name='josa',
-    version='0.0.5',
+    version='0.0.6',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
