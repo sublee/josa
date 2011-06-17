@@ -40,4 +40,4 @@ def josa(word, type, lang='eng'):
 
 def append(word, type, lang='eng', spacing=False):
     space = ' ' if spacing else ''
-    return word + space + josa(word, type)
+    return word + space + josa(word, type, lang)

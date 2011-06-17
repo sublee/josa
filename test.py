@@ -42,6 +42,9 @@ class HangulPostpositionTestCase(unittest.TestCase):
         assert u'luigi는' == josa.append(u'luigi', u'은', lang='ita')
         assert u'italian이' == josa.append(u'italian', u'가', lang='ita')
 
+    def test_append_japanese(self):
+        assert u'あなた가' == josa.append(u'あなた', u'이', lang='jpn')
+
 
 def suite():
     suite = unittest.TestSuite()
