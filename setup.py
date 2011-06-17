@@ -6,10 +6,14 @@ Josa
 Appends the correct postposition to a given word by checking whether the word
 has jongseong (final consonant) or not.
 
->>> print josa.append('false positive', u'를')
+>>> print josa.append(u'false positive', u'를')
 false positive를
->>> print josa.append('deterministic', u'랑')
+>>> print josa.append(u'deterministic', u'랑')
 deterministic이랑
+>>> print josa.append(u'넥슨', u'와', lang='kor')
+넥슨과
+>>> print josa.append(u'あなた', u'이', lang='jpn')
+あなた가
 
 """
 try:
@@ -25,13 +29,15 @@ def run_tests():
 
 setup(
     name='josa',
-    version='0.0.1',
+    version='0.0.2',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
     description='Appends the correct korean postposition',
     long_description=__doc__,
     platforms='any',
+    packages=['josa'],
+    package_dir={'josa': '.'},
     install_requires=['hangulize'],
     classifiers=[
         'Development Status :: 4 - Beta',
