@@ -1,0 +1,14 @@
+Josa
+~~~~
+
+Appends the correct postposition to a given word by checking whether the word
+has jongseong (final consonant) or not.
+
+>>> print josa.append(u'false positive', u'를')
+false positive를
+>>> print josa.append(u'deterministic', u'랑')
+deterministic이랑
+>>> print josa.append(u'넥슨', u'와', lang='kor')
+넥슨과
+>>> print josa.append(u'あなた', u'이', lang='jpn')
+あなた가
