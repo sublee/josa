@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Hanpp
-~~~~~
+Josa
+~~~~
 
 Appends the correct postposition to a given word by checking whether the word
 has jongseong (final consonant) or not.
 
->>> print hanpp.append('false positive', u'를')
+>>> print josa.append('false positive', u'를')
 false positive를
->>> print hanpp.append('deterministic', u'랑')
+>>> print josa.append('deterministic', u'랑')
 deterministic이랑
 
 """
@@ -24,8 +24,8 @@ def run_tests():
 
 
 setup(
-    name='hanpp',
-    version='0.0.2',
+    name='josa',
+    version='0.0.1',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',

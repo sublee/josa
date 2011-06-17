@@ -12,7 +12,9 @@ POSTPOSITIONS = [(u'을', u'를'), (u'과', u'와'), (u'이', u'가'),
 def has_jongseong(word, lang='eng'):
     if lang == 'eng':
         return has_jongseong_for_eng(word)
-    return bool(hangul.split(hangulize(word, lang)[-1])[2])
+    elif lang != 'kor':
+        word = hangulize(word, lang)
+    return bool(hangul.split(word[-1])[2])
 
 
 def has_jongseong_for_eng(word):
@@ -25,7 +27,7 @@ def has_jongseong_for_eng(word):
     return point > 0
 
 
-def hanpp(word, type, lang='eng'):
+def josa(word, type, lang='eng'):
     if not isinstance(word, unicode):
         word = word.encode()
     if not isinstance(type, unicode):
@@ -38,4 +40,4 @@ def hanpp(word, type, lang='eng'):
 
 def append(word, type, lang='eng', spacing=False):
     space = ' ' if spacing else ''
-    return word + space + hanpp(word, type)
+    return word + space + josa(word, type)
