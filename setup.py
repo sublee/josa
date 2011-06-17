@@ -29,7 +29,7 @@ def run_tests():
 
 setup(
     name='josa',
-    version='0.0.4',
+    version='0.0.5',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
