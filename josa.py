@@ -2,7 +2,11 @@
 from hangulize import hangulize
 
 
-INDO_EUROPEANS = [('ita', 0.5), ('deu', 0.1), ('spa', 1), ('por', 0.3)]
+INDO_EUROPEANS = {'nld': 1.7}
+                  #'spa': 1,
+                  #'ita': 0.3,
+                  #'por': 0.3,
+                  #'deu': 0.1,
 POSTPOSITIONS = [(u'을', u'를'), (u'은', u'는'), (u'과', u'와'),
                  (u'이', u'가'), (u'이랑', u'랑'), (u'이라', u'라'),
                  (u'이면', u'면'), (u'이야', u'야'), (u'이다', u'다'),
@@ -19,7 +23,7 @@ def has_jongseong(word, lang='eng'):
 
 def has_jongseong_for_eng(word):
     point = 0
-    for lang, accuracy in INDO_EUROPEANS:
+    for lang, accuracy in INDO_EUROPEANS.items():
         if has_jongseong(word, lang):
             point += accuracy
         else:
