@@ -29,15 +29,14 @@ def run_tests():
 
 setup(
     name='josa',
-    version='0.0.2',
+    version='0.0.3',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
     description='Appends the correct korean postposition',
     long_description=__doc__,
     platforms='any',
-    packages=['josa'],
-    package_dir={'josa': '.'},
+    py_modules=['josa'],
     install_requires=['hangulize'],
     classifiers=[
         'Development Status :: 4 - Beta',
