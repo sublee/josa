@@ -25,13 +25,14 @@ def run_tests():
 
 setup(
     name='hanpp',
-    version='0.0.1',
+    version='0.0.2',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
     description='Appends the correct korean postposition',
     long_description=__doc__,
     platforms='any',
+    install_requires=['hangulize'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
