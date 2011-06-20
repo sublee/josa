@@ -28,6 +28,23 @@ class JosaTestCase(unittest.TestCase):
         assert not josa.has_jongseong('rider')
         assert not josa.has_jongseong('architecture')
 
+    def test_empty_word(self):
+        try:
+            josa.has_jongseong(u'')
+            assert False
+        except Exception, e:
+            assert isinstance(e, ValueError)
+        try:
+            josa.josa(u'', u'를')
+            assert False
+        except Exception, e:
+            assert isinstance(e, ValueError)
+        try:
+            josa.append(u'', u'를')
+            assert False
+        except Exception, e:
+            assert isinstance(e, ValueError)
+
     def test_josa_english(self):
         assert u'를' == josa.josa(u'false positive', u'를')
         assert u'를' == josa.josa(u'false negative', u'을')

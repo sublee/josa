@@ -14,14 +14,16 @@ POSTPOSITIONS = [(u'을', u'를'), (u'은', u'는'), (u'과', u'와'),
 
 
 def has_jongseong(word, lang='eng'):
-    if lang == 'eng':
-        return has_jongseong_for_eng(word)
+    if not word:
+        raise ValueError('the empty word is given')
+    elif lang == 'eng':
+        return _has_jongseong_for_eng(word)
     elif lang != 'kor':
         word = hangulize(word, lang)
     return (ord(word[-1]) - 16) % 28 != 0
 
 
-def has_jongseong_for_eng(word):
+def _has_jongseong_for_eng(word):
     point = 0
     for lang, accuracy in INDO_EUROPEANS.items():
         if has_jongseong(word, lang):

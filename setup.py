@@ -36,7 +36,7 @@ def run_tests():
 
 setup(
     name='josa',
-    version='0.0.6',
+    version='0.0.7',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
