@@ -3,30 +3,32 @@
 Josa
 ~~~~
 
-Appends the correct postposition to a given word by checking whether the word
-has jongseong (final consonant) or not.
+This library has been deprecated. Use `korean
+<http://pypi.python.org/pypi/korean`_ instead.
 
->>> print josa.append(u'false positive', u'를')
-false positive를
->>> print josa.append(u'deterministic', u'랑')
-deterministic이랑
->>> print josa.append(u'넥슨', u'와', lang='kor')
-넥슨과
->>> print josa.append(u'あなた', u'이', lang='jpn')
-あなた가
+The description of the past:
 
-Links
-`````
+    Appends the correct postposition to a given word by checking whether the word
+    has jongseong (final consonant) or not.
 
-* `GitHub repository <http://github.com/sublee/josa>`_
-* `development version
-  <http://github.com/sublee/josa/zipball/master#egg=josa-dev>`_
+    >>> print josa.append(u'false positive', u'를')
+    false positive를
+    >>> print josa.append(u'deterministic', u'랑')
+    deterministic이랑
+    >>> print josa.append(u'넥슨', u'와', lang='kor')
+    넥슨과
+    >>> print josa.append(u'あなた', u'이', lang='jpn')
+    あなた가
+
+    Links
+    `````
+
+    * `GitHub repository <http://github.com/sublee/josa>`_
+    * `development version
+      <http://github.com/sublee/josa/zipball/master#egg=josa-dev>`_
 
 """
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 
 def run_tests():
@@ -36,7 +38,7 @@ def run_tests():
 
 setup(
     name='josa',
-    version='0.0.7',
+    version='0.0.8',
     license='BSD',
     author='Heungsub Lee',
     author_email='h@subl.ee',
@@ -44,7 +46,7 @@ setup(
     long_description=__doc__,
     platforms='any',
     py_modules=['josa'],
-    install_requires=['hangulize'],
+    install_requires=['korean', 'hangulize'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
